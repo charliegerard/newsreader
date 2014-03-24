@@ -63,7 +63,7 @@
  	display: block;
  }
 
- #-------------- HOMEPAGE -------------------#
+ /*------------------------HOMEPAGE-------------------------*/
 
  #homepage{
  	display: block;
@@ -96,29 +96,56 @@
  	text-align: center;
  }
 
- #--------------- TOPICS PAGE ----------------#
+ /*------------------------TOPICS PAGE-------------------------*/
 
  #topics{
  	display: block;
  	max-width: 960px;
  	margin: 0 auto;
+ 	text-align: center;
+ }
+
+ #topics h1{
+ 	margin-bottom: 40px;
  }
 
 #topics a{
 	color: black;
 }
 
-#single_topic{
-	display: block;
- 	max-width: 960px;
- 	margin: 0 auto;
+#single_topic {
+	border: 1px solid black;
+	padding: 20px;
+	background-color: pink;
+	display: inline-block;
+	width: 200px;
+	color: black;
+	text-align: center;
+	margin-bottom: 40px;
 }
 
-#single_topic a, p{
+/*------------------------ SINGLE TOPIC PAGE-------------------------*/
+
+#topic_id{
+	display: block;
+	margin: 0 auto;
+	max-width: 960px;
+}
+
+#topic_id_detail{
+	margin-bottom: 20px;
+}
+
+#topic_id_detail h2 a{
 	color: black;
 }
 
-#----------------PROFILE PAGE-------------------#
+#topic_id_detail a{
+	color: green;
+}
+
+
+/*------------------------PROFILE PAGE-------------------------*/
 
 #profile{
 	max-width: 960px;
@@ -133,7 +160,7 @@
 	border-radius: 50%;
 }
 
-#----------------LATEST ARTICLES PAGE-------------#
+/*------------------------LATEST ARTICLES PAGE-------------------------*/
 
 #source_latest_articles{
 	display: block;
@@ -150,12 +177,13 @@
 	max-width: 400px;
 }
 
-
+/*------------------------NEWSFEED HOMEPAGE-------------------------*/
 
 #newsfeed_home{
 	display: block;
 	margin: 0 auto;
 	max-width: 900px;
+	padding: 0 30px;
 }
 
 #newsfeed_home img{
@@ -169,9 +197,17 @@
 	background-color: grey;
 	border: 1px solid black;
 	margin: 10px;
-
+	vertical-align: top;
 }
 
+#newsfeed_home_source img{
+	display: none;
+}
+
+#newsfeed_home_source h4{
+	color: #bbb;
+	font-weight: normal;
+}
 
 
 

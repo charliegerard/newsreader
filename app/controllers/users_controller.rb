@@ -40,16 +40,7 @@ class UsersController < ApplicationController
   end
 
   def feed
-    @source = @current_user.sources
-
-    @source.each do |s|
-      sloppy_url = s.url
-      rss = Feedbag.find(sloppy_url).first
-      feeds = Feedjira::Feed.fetch_and_parse(rss)
-      @response = HTTParty.get (rss)
-    # @select = JSON(response)
-    end
-    
+    @all_sources = @current_user.sources
   end
 
   private

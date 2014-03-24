@@ -16,15 +16,17 @@
 </ul>
 
 <div id="newsfeed_home">
-		<% @source.each do |s| %>
+	<% @all_sources.each do |s| %>
+		<% sloppy_url = s.url %>
+		<% rss = Feedbag.find(sloppy_url).first %>
+		<% feeds = Feedjira::Feed.fetch_and_parse(rss) %>
+		<% @response = HTTParty.get (rss) %>
+
 		<div id="newsfeed_home_source">
-		<h4><%= s.name %></h4>
-
-		<h3><%= @response["rss"]["channel"]["item"][0]["title"] %></h3>
-		<p><%== @response["rss"]["channel"]["item"][0]["description"] %></p>
+			<h2><%= s.name %></h2>
+			<h4><%== @response["rss"]["channel"]["item"][0]["title"] %></h4>
+			<!-- <p><%== @response['rss']['channel']['item'][0]['description'].split('.').first %></p> -->
 		</div>
-		<% end %>
-
-		<hr>
-	
+	<%end%>
+	<hr>
 </div>
