@@ -42,9 +42,9 @@
  nav li a{
  	color: black;
  	text-decoration: none;
- 	margin-right: 10px;
+ 	margin-right: 20px;
  	font-family: "Lato", sans-serif;
- 	font-weight: 600;
+ 	font-weight: 400;
  	font-size: 12px;
  }
 
@@ -52,6 +52,10 @@
  	color: grey;
  }
 
+nav hr{
+	max-width: 980px;
+	margin: 10px auto;
+}
  h1{
 	font-family: "Lato", sans-serif;
 	font-weight: 200;
@@ -110,16 +114,15 @@
  }
 
 #topics a{
-	color: black;
+	color: white;
 }
 
 #single_topic {
 	border: 1px solid black;
 	padding: 20px;
-	background-color: pink;
+	background-color: rgb(55,131,120);
 	display: inline-block;
 	width: 200px;
-	color: black;
 	text-align: center;
 	margin-bottom: 40px;
 }
@@ -151,20 +154,40 @@
 	max-width: 960px;
 	margin: 0 auto;
 	display: block;
-	background-color: grey;
-	opacity: 0.8;
+	border: 1px solid black;
+	padding: 10px;
 }
 
 #profile img{
 	max-width: 150px;
 	border-radius: 50%;
+	margin: 0 auto;
+	display: block;
 }
+
+#profile h1{
+	text-align: center;
+	font-weight: 400;
+	font-size: 35px;
+}
+
+#profile h2{
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+	text-align: center;
+}
+
+#profile p{
+	font-family: "Lato", sans-serif;
+	text-align: center;
+}
+
 
 /*------------------------LATEST ARTICLES PAGE-------------------------*/
 
 #source_latest_articles{
 	display: block;
-	max-width: 500px;
+	max-width: 960px;
 	margin: 0 auto;
 }
 
@@ -178,6 +201,16 @@
 }
 
 /*------------------------NEWSFEED HOMEPAGE-------------------------*/
+
+#feed{
+	display: block;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+#feed h1{
+	font-size: 40px;
+}
 
 #newsfeed_home{
 	display: block;
@@ -194,9 +227,11 @@
 #newsfeed_home_source{
 	display: inline-block;
 	max-width: 250px;
-	background-color: grey;
-	border: 1px solid black;
-	margin: 10px;
+	background-color: rgb(149,206,77);
+	
+	padding: 5px;
+	box-shadow: 1px 3px 5px #bbb;
+	margin: 20px 10px 10px 10px;
 	vertical-align: top;
 }
 
@@ -204,9 +239,18 @@
 	display: none;
 }
 
+#newsfeed_home_source h2{
+	font-family: "Lato", sans-serif;
+	color: grey;
+	font-weight: 300;
+	font-size: 20px;
+}
+
 #newsfeed_home_source h4{
-	color: #bbb;
-	font-weight: normal;
+	font-family: "Lato", sans-serif;
+	color: white;
+	font-weight: 300;
+	font-size: 15px;
 }
 
 
