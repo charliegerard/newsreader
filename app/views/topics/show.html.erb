@@ -6,6 +6,7 @@
 	<% @topic.sources.each do |s| %>
 		<p><a href='/sources/<%= s[:id]%>'><%= s.name %></a></p>
 		<button><a href='/sources/<%= s[:id]%>/follow'>follow</a></button>
+		<button><a href='/sources/<%= s[:id]%>/unfollow'>unfollow</a></button>
 	<%end%>
 
 	<p><%= link_to("Update topic", edit_topic_path)%>

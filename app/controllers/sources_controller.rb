@@ -27,6 +27,12 @@ class SourcesController < ApplicationController
     redirect_to users_path
   end
 
+  def unfollow
+    source = Source.find params[:id]
+    @current_user.sources.delete(source)
+    redirect_to users_path
+  end
+
   def update
   end
 

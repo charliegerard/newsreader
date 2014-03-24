@@ -1,9 +1,30 @@
 <h1>Your newsfeed </h1>
+<h3>Latest articles:</h3>
 
-<%= @current_user.topics.each do |topic| %>
-	<%= topic.name %>
-<%end%>
+<ul class="nav nav-tabs">
+  
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      Sources <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+		<% @current_user.sources.each do |s| %>
+			<p><a href='/sources/<%= s[:id]%>'><%= s.name %></a></p>
+		<%end%>
+    </ul>
+  </li>
+</ul>
 
-<% @current_user.sources.each do |s| %>
-	<p><a href='/sources/<%= s[:id]%>'><%= s.name %></a></p>
-<%end%>
+<div id="newsfeed_home">
+		<% @source.each do |s| %>
+		<div id="newsfeed_home_source">
+		<h4><%= s.name %></h4>
+
+		<h3><%= @response["rss"]["channel"]["item"][0]["title"] %></h3>
+		<p><%== @response["rss"]["channel"]["item"][0]["description"] %></p>
+		</div>
+		<% end %>
+
+		<hr>
+	
+</div>

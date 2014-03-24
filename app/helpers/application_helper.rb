@@ -12,6 +12,7 @@ module ApplicationHelper
 		end
 
 		if @current_user && @current_user.admin
+			links += "<li>#{link_to('home', root_path)}</li>"
 			links += "<li>#{link_to('Show users', users_path)}</li>"
 		end
 		links

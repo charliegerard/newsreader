@@ -152,6 +152,26 @@
 
 
 
+#newsfeed_home{
+	display: block;
+	margin: 0 auto;
+	max-width: 900px;
+}
+
+#newsfeed_home img{
+	display: inline-block;
+	max-width: 250px;
+}
+
+#newsfeed_home_source{
+	display: inline-block;
+	max-width: 250px;
+	background-color: grey;
+	border: 1px solid black;
+	margin: 10px;
+
+}
+
 
 
 
