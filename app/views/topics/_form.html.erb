@@ -1,0 +1,6 @@
+<%= form_for @topic do |t| %>
+	<%= t.label :name %>
+	<%= t.text_field :name, :autofocus => true, :required => true %> 
+
+	<%= t.submit %>
+<% end %>

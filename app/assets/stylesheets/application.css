@@ -1,0 +1,168 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+ @import "bootstrap.css";
+
+ body{
+ 	margin: 0;
+ 	background-color: white;
+ 	color: black;
+ }
+
+ nav{
+ 	display: block;
+ 	margin: 0 auto;
+ 	top: 0;
+ 	text-align: center;
+ 	background-color: white;
+ 	height: 50px;
+ }
+
+ nav ul{
+ 	margin: 0;
+ }
+
+ nav ul li{
+ 	list-style: none;
+ 	display: inline-block;
+ 	margin-top: 15px;
+ }
+
+ nav li a{
+ 	color: black;
+ 	text-decoration: none;
+ 	margin-right: 10px;
+ 	font-family: "Lato", sans-serif;
+ 	font-weight: 600;
+ 	font-size: 12px;
+ }
+
+ nav li a:hover{
+ 	color: grey;
+ }
+
+ h1{
+	font-family: "Lato", sans-serif;
+	font-weight: 200;
+	font-size: 50px;
+	color: black;
+ }
+
+ section input{
+ 	display: block;
+ }
+
+ #-------------- HOMEPAGE -------------------#
+
+ #homepage{
+ 	display: block;
+ 	margin-top: 200px;
+ 	max-with: 960px;
+ 	text-align: center;
+ }
+
+ #homepage hr{
+ 	max-width: 600px;
+ }
+
+ #homepage h1{
+ 	text-align: center;
+ }
+
+ #homepage a{
+ 	color: black;
+ 	font-family: "Lato", sans-serif;
+ 	font-weight: 200;
+ 	text-decoration: none;
+ 	font-size: 12px;
+ 	border: 1px solid white;
+ 	padding: 5px;
+ }
+
+ #homepage p{
+ 	display: block;
+ 	margin: 50px auto;
+ 	text-align: center;
+ }
+
+ #--------------- TOPICS PAGE ----------------#
+
+ #topics{
+ 	display: block;
+ 	max-width: 960px;
+ 	margin: 0 auto;
+ }
+
+#topics a{
+	color: black;
+}
+
+#single_topic{
+	display: block;
+ 	max-width: 960px;
+ 	margin: 0 auto;
+}
+
+#single_topic a, p{
+	color: black;
+}
+
+#----------------PROFILE PAGE-------------------#
+
+#profile{
+	max-width: 960px;
+	margin: 0 auto;
+	display: block;
+	background-color: grey;
+	opacity: 0.8;
+}
+
+#profile img{
+	max-width: 150px;
+	border-radius: 50%;
+}
+
+#----------------LATEST ARTICLES PAGE-------------#
+
+#source_latest_articles{
+	display: block;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+#source_latest_articles h3{
+	font-weight: normal;
+	padding: 10px;
+}
+
+#source_latest_articles img{
+	max-width: 400px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

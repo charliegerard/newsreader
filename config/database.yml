@@ -1,0 +1,10 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: newsreader_app_development
+  pool: 5
+  host: localhost
+  username: charlieg
+  password:
+

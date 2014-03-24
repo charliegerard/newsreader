@@ -1,0 +1,9 @@
+<h1>Your newsfeed </h1>
+
+<%= @current_user.topics.each do |topic| %>
+	<%= topic.name %>
+<%end%>
+
+<% @current_user.sources.each do |s| %>
+	<p><a href='/sources/<%= s[:id]%>'><%= s.name %></a></p>
+<%end%>

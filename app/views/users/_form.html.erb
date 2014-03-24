@@ -1,0 +1,21 @@
+<%= form_for @user do |u| %>
+	<%= u.label :first_name %>
+	<%= u.text_field :first_name, :autofocus => true, :required => true %> 
+
+	<%= u.label :last_name %>
+	<%= u.text_field :last_name, :required => true %>
+
+	<%= u.label :email_address %>
+	<%= u.text_field :email_address, :required => true %>
+
+	<%= u.label :photo %>
+	<%= u.url_field :photo, :required => true %>
+
+	<%= u.label :password %>
+	<%= u.password_field :password, :required => true %>
+
+	<%= u.label :password_confirmation %>
+	<%= u.password_field :password_confirmation, :required => true %>
+
+	<%= u.submit %>
+<% end %>

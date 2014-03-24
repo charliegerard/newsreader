@@ -1,0 +1,14 @@
+<div id="single_topic">
+
+	<h1><%= @topic.name%></h1>
+	<p>See below a list of sources for the topic <%= @topic.name %>:</p>
+
+	<% @topic.sources.each do |s| %>
+		<p><a href='/sources/<%= s[:id]%>'><%= s.name %></a></p>
+		<button><a href='/sources/<%= s[:id]%>/follow'>follow</a></button>
+	<%end%>
+
+	<p><%= link_to("Update topic", edit_topic_path)%>
+	<%= link_to("Delete topic", @topic, :method => :delete)%></p>
+
+</div>

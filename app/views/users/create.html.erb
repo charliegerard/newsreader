@@ -1,0 +1,15 @@
+<h1>Hello <%= @user.first_name %></h1>
+<p>You chose the following topics and sources:</p>
+
+<% @user.topics.each do |topic| %>
+	<p><%= topic.name %>:</p>
+
+	
+	<% topic.sources.each do |s| %>
+		<p><%= s.name %></p>
+	<%end%>
+	
+<%end%>
+
+ 
+

@@ -1,0 +1,9 @@
+<div id="profile">
+	<h1>Hello <%= @user.first_name %> <%= @user.last_name %></h1>
+	<h2>Account details</h2>
+	<p><%= @user.email_address %></p>
+	<img src='<%= @user.photo%>'>
+
+	<%= link_to("Update details", edit_user_path)%>
+	<%= link_to("Delete account", :method => :delete)%>
+</div>

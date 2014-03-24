@@ -1,0 +1,9 @@
+<div id="topics">
+	<h1>All topics</h1>
+
+	<% @topic.each do |t| %>
+		<p><a href='/topics/<%= t[:id]%>'><%= t.name %></a></p>
+	<%end%>
+</div>
+
+	

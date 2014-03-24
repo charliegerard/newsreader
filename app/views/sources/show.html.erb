@@ -1,0 +1,17 @@
+<div id="source_latest_articles">
+	<h1><%= @source.name %></h1>
+
+	<p><%= @response["rss"]["channel"]["description"] %></p>
+	<p>Latest articles:</p>
+
+	<h3><%= @response["rss"]["channel"]["item"][0]["title"] %></h3>
+	<p><%== @response["rss"]["channel"]["item"][0]["description"] %></p>
+
+	<h3><%= @response["rss"]["channel"]["item"][1]["title"] %></h3>
+	<p><%== @response["rss"]["channel"]["item"][1]["description"] %></p>
+
+	<h3><%= @response["rss"]["channel"]["item"][2]["title"] %></h3>
+	<p><%== @response["rss"]["channel"]["item"][2]["description"] %></p>
+</div>
+
+
