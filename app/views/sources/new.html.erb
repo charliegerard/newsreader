@@ -1,7 +1,6 @@
-<h1>Add new sources</h1>
-<h2>Please choose a few sources to follow</h2>
-	<% Source.order(:name). each do |source|%>
-		<span><%= source.name%></span>
-		<%= check_box_tag 'user[source_ids][]', source.id %> 
-		<!--the extra brackets tell the browser there can be multiple recipes. The end returns true if the recipe is already in the book so the checkbox will be pre-checked-->
-	<%end%>
+<!-- <div id="own_source">
+	<h1>Add your own source and choose the category they should belong to:</h1>
+	<%= render :partial => "form" %>
+</div>
+
+ -->

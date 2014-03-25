@@ -135,16 +135,47 @@ nav hr{
 	max-width: 960px;
 }
 
+#topic_id h1{
+	background-color: rgb(60,153,108) ;
+	font-size: 30px;
+	color: white;
+	font-weight: 300;
+	padding: 10px;
+}
+
 #topic_id_detail{
 	margin-bottom: 20px;
+	display: inline-block;
+	border: 1px solid black;
+	margin: 10px;
+	text-align: center;
+	padding: 10px;
+	box-shadow: 1px 1px 3px #bbb;
 }
 
 #topic_id_detail h2 a{
-	color: black;
+	color: rgb(60,153,108);
 }
 
 #topic_id_detail a{
-	color: green;
+	color: black;
+}
+
+/*------------------------ADD OWN SOURCE PAGE------------------------*/
+
+#own_source{
+	display: block;
+	margin: 0 auto;
+	max-width: 960px;
+}
+
+#own_source h1{
+	font-size: 40px;
+	margin-bottom: 50px;
+}
+
+#own_source form{
+	margin-bottom: 40px;
 }
 
 
@@ -198,6 +229,17 @@ nav hr{
 
 #source_latest_articles img{
 	max-width: 400px;
+}
+
+#single_article{
+	display: block;
+	max-width: 800px;
+}
+
+#single_article h3{
+	font-size: 35px;
+	border: 1ps solid grey;
+	background-color: #bbb;
 }
 
 /*------------------------NEWSFEED HOMEPAGE-------------------------*/

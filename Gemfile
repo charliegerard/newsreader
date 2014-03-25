@@ -37,11 +37,13 @@ gem 'sextant'
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
 
-gem 'pry-rails'
-gem 'pry-debugger'
-gem 'pry-stack_explorer'
-gem 'better_errors'
-gem 'binding_of_caller'
+group :development do
+	gem 'pry-rails'
+	gem 'pry-debugger'
+	gem 'pry-stack_explorer'
+	gem 'better_errors'
+	gem 'binding_of_caller'
+end
 
 gem 'protected_attributes'
 gem 'httparty'
