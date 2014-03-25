@@ -14,7 +14,7 @@
 class User < ActiveRecord::Base
 	attr_accessible :first_name, :last_name, :email_address, :photo, :topic_ids, :password, :password_confirmation 
 	has_many :topics
-	has_many :sources
+	has_and_belongs_to_many :sources
 
 	has_secure_password
 	validates :photo, :presence => true #the user must have an image, the account will not be created without

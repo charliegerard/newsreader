@@ -1,0 +1,14 @@
+<%= form_for @new_source do |s| %>
+	<%= s.label :name %>
+	<%= s.text_field :name, :autofocus => true, :required => true %> 
+
+	<%= s.label :url %>
+	<%= s.text_field :url, :required => true %>
+
+<!-- 	<% @topic.each do |t| %>
+		<p><%= t.name %>
+		<%= check_box_tag 'source[t_id]', t.id, :required => "true" %></p>
+	<%end%> -->
+
+	<%= s.submit %>
+<% end %>
