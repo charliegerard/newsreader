@@ -36,6 +36,7 @@ gem 'haml'
 gem 'sextant'
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
+gem 'rails_12factor'
 
 group :development do
 	gem 'pry-rails'
