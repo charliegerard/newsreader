@@ -8,3 +8,10 @@ development:
   username: charlieg
   password:
 
+  production:
+  adapter: postgresql
+  encoding: unicode
+  database: newsreader_app_production
+  pool: 5
+  password:
+
