@@ -40,7 +40,8 @@ class UsersController < ApplicationController
   end
 
   def feed
-    # @all_sources = @current_user.sources
+   @topics = Topic.all
+   @source_array = []
   end
 
   private

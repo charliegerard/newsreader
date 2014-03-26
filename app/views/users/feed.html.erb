@@ -26,16 +26,33 @@
 				</div>
 				<% end %>
 			<%end%>
-			<hr>
 		</div>
 	<%end%>
 
+	<!-- Display the recommendations from other users if the user is already following sources -->
+	<% if @current_user.sources[0] != nil %>
 	<h4>Recommended for you</h4>
+	<!-- For each topic including the current user id, go through each user and their sources to display other sources from the same topic -->
+	<% @topics.each do |t| %>
+		<% if t.user_ids.include? @current_user.id %>
+			<% t.users.each do |u| %>
+				<% u.sources.each do |s|%>
+					<% if !(@current_user.sources.include? s) %>
+						<% @source_array << s %>
+					<%end%>
+				<%end%>
+			<%end%>
+		<%end%>
+	<%end%>
+<%end%>
+<!-- Avoid duplicates between users sources. Did not work properly inside the loop. -->
+<% @source_array.uniq.each do |s| %>
+	<p><a href='/sources/<%= s.id%>'><%= s.name %></a></p>
+<%end%>
 
 <!--Form for search through sources -->
 	<%#= form_tag '/search', :method => "get" do %>
         <%#= text_field_tag 'query', nil, :placeholder => 'your search term' %>
         <%#= submit_tag 'Search' %>
     <%# end %>
-
 </div>

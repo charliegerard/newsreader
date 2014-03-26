@@ -1,4 +1,10 @@
 <div id="own_source">
 	<h1>Add your own source and choose the category they should belong to:</h1>
+	<!--Display an error message if a rss feed cannot be found -->
+	<% if @rss == false || @rss.present? == false %>
+		<h2>Oops, something went wrong and we cannot add this url to your newsfeed. Please try with another one!</h2>
+	<%end%>
 	<%= render :partial => "form" %>
 </div>
+
+
