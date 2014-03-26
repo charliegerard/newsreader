@@ -8,6 +8,7 @@ class SourcesController < ApplicationController
     new_source.topic_id = params[:name][:id]
     new_source.save
 
+    #adds the source to the user's sources
     @current_user.sources << new_source
 
     redirect_to root_path
@@ -27,21 +28,24 @@ class SourcesController < ApplicationController
     rss = Feedbag.find(sloppy_url).first
     feeds = Feedjira::Feed.fetch_and_parse(rss)
     @response = HTTParty.get (rss)
-    # @select = JSON(response)
   end
 
   def follow
     source = Source.find params[:id]
-    #I'm not sure what I'm doing here but the sources are not added to the user if the rss feed cannot be found.
     sloppy_url = source.url
+
     rss = Feedbag.find(sloppy_url).first
     if rss.present?
       feeds = Feedjira::Feed.fetch_and_parse(rss)
       @response = HTTParty.get (rss)
     end
 
+    topic = Topic.find(source.topic_id)
+    #the sources are not added to the user's sources if the rss url cannot be found.
     if @response["rss"].present?
       @current_user.sources << source
+      binding.pry
+      topic.users << @current_user
     end
     redirect_to root_path
   end

@@ -27,6 +27,7 @@
  	text-align: center;
  	background-color: white;
  	height: 50px;
+ 	margin-bottom: 100px;
  }
 
  nav ul{
@@ -56,6 +57,7 @@ nav hr{
 	max-width: 980px;
 	margin: 10px auto;
 }
+
  h1{
 	font-family: "Lato", sans-serif;
 	font-weight: 200;
@@ -228,6 +230,8 @@ nav hr{
 	text-decoration: none;
 	font-family: 'Lato', sans-serif;
 	color: black;
+	font-weight: bold;
+	font-size: 15px;
 }
 
 #source_latest_articles h3{
@@ -318,49 +322,11 @@ nav hr{
 
 /*----------------------SOURCE PAGE WITH SNIPPET OF ARTICLE --------*/
 
-#single_article0{
+#single_article{
 	display: none;
 }
 
-#single_article1{
-	display: none;
-}
 
-#single_article2{
-	display: none;
-}
-
-#single_article3{
-	display: none;
-}
-
-#single_article4{
-	display: none;
-}
-
-#single_article5{
-	display: none;
-}
-
-#single_article6{
-	display: none;
-}
-
-#single_article7{
-	display: none;
-}
-
-#single_article8{
-	display: none;
-}
-
-#single_article9{
-	display: none;
-}
-
-#single_article10{
-	display: none;
-}
 
 
 
