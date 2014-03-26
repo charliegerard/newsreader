@@ -1,43 +1,107 @@
 <div id="source_latest_articles">
 	<h1><%= @source.name %></h1>
 
+	<!-- Shows the follow/unfollow button according to the user's sources -->
+	<% if @current_user.sources.ids.include? @source.id %>  
+		<button><a href='/sources/<%= @source.id %>/unfollow'>unfollow</a></button>
+	<%else%>
+		<button><a href='/sources/<%= @source.id%>/follow'>follow</a></button>
+	<%end%>
+		
 	<p><%= @response["rss"]["channel"]["description"] %></p>
 	<p>Latest articles:</p>
 
-	<div id="single_article">
-		<h3><%= @response["rss"]["channel"]["item"][0]["title"] %></h3>
+	<!-- Using javascript to show a snippet of the article on click -->
+	<!-- 1st article -->
+	<a href="#" onclick="toggle_visibility('single_article0');">
+		<%= @response["rss"]["channel"]["item"][0]["title"] %>
+	</a>
+	<div id="single_article0">
 		<p><%== @response["rss"]["channel"]["item"][0]["description"] %></p>
 	</div>
+	<br>
 
-	<h3><%= @response["rss"]["channel"]["item"][1]["title"] %></h3>
-	<p><%== @response["rss"]["channel"]["item"][1]["description"] %></p>
+	<!-- 2nd article -->
+	<a href="#" onclick="toggle_visibility('single_article1');">
+		<%= @response["rss"]["channel"]["item"][1]["title"] %>
+	</a>
+	<div id="single_article1">
+		<p><%== @response["rss"]["channel"]["item"][1]["description"] %></p>
+	</div>
+	<br>
 
-	<h3><%= @response["rss"]["channel"]["item"][2]["title"] %></h3>
-	<p><%== @response["rss"]["channel"]["item"][2]["description"] %></p>
+	<!-- 3rd article -->
+	<a href="#" onclick="toggle_visibility('single_article2');">
+		<%= @response["rss"]["channel"]["item"][2]["title"] %>
+	</a>
+	<div id="single_article2">
+		<p><%== @response["rss"]["channel"]["item"][2]["description"] %></p>
+	</div>
+	<br>
 
-	<h3><%= @response["rss"]["channel"]["item"][3]["title"] %></h3>
-	<p><%== @response["rss"]["channel"]["item"][3]["description"] %></p>
+	<!-- 4th article -->
+	<a href="#" onclick="toggle_visibility('single_article3');">
+		<%= @response["rss"]["channel"]["item"][3]["title"] %>
+	</a>
+	<div id="single_article3">
+		<p><%== @response["rss"]["channel"]["item"][3]["description"] %></p>
+	</div>
+	<br>
 
-	<h3><%= @response["rss"]["channel"]["item"][4]["title"] %></h3>
-	<p><%== @response["rss"]["channel"]["item"][4]["description"] %></p>
+	<!-- 5th article -->
+	<a href="#" onclick="toggle_visibility('single_article4');">
+		<%= @response["rss"]["channel"]["item"][4]["title"] %>
+	</a>
+	<div id="single_article4">
+		<p><%== @response["rss"]["channel"]["item"][4]["description"] %></p>
+	</div>
+	<br>
 
-	<h3><%= @response["rss"]["channel"]["item"][5]["title"] %></h3>
-	<p><%== @response["rss"]["channel"]["item"][5]["description"] %></p>
+	<!-- 6th article -->
+	<a href="#" onclick="toggle_visibility('single_article5');">
+		<%= @response["rss"]["channel"]["item"][5]["title"] %>
+	</a>
+	<div id="single_article5">
+		<p><%== @response["rss"]["channel"]["item"][5]["description"] %></p>
+	</div>
+	<br>
 
-	<h3><%= @response["rss"]["channel"]["item"][6]["title"] %></h3>
-	<p><%== @response["rss"]["channel"]["item"][6]["description"] %></p>
+	<!-- 7th article -->
+	<a href="#" onclick="toggle_visibility('single_article6');">
+		<%= @response["rss"]["channel"]["item"][6]["title"] %>
+	</a>
+	<div id="single_article6">
+		<p><%== @response["rss"]["channel"]["item"][6]["description"] %></p>
+	</div>
+	<br>
 
-	<h3><%= @response["rss"]["channel"]["item"][7]["title"] %></h3>
-	<p><%== @response["rss"]["channel"]["item"][7]["description"] %></p>
+	<!-- 8th article -->
+	<a href="#" onclick="toggle_visibility('single_article7');">
+		<%= @response["rss"]["channel"]["item"][7]["title"] %>
+	</a>
+	<div id="single_article7">
+		<p><%== @response["rss"]["channel"]["item"][7]["description"] %></p>
+	</div>
+	<br>
 
-	<h3><%= @response["rss"]["channel"]["item"][8]["title"] %></h3>
-	<p><%== @response["rss"]["channel"]["item"][8]["description"] %></p>
+	<!-- 9th article -->
+	<a href="#" onclick="toggle_visibility('single_article8');">
+		<%= @response["rss"]["channel"]["item"][8]["title"] %>
+	</a>
+	<div id="single_article8">
+		<p><%== @response["rss"]["channel"]["item"][8]["description"] %></p>
+	</div>
+	<br>
 
-	<h3><%= @response["rss"]["channel"]["item"][9]["title"] %></h3>
-	<p><%== @response["rss"]["channel"]["item"][9]["description"] %></p>
+	<!-- 10th article -->
+	<a href="#" onclick="toggle_visibility('single_article9');">
+		<%= @response["rss"]["channel"]["item"][9]["title"] %>
+	</a>
+	<div id="single_article9">
+		<p><%== @response["rss"]["channel"]["item"][9]["description"] %></p>
+	</div>
+	<br>
 
-	<h3><%= @response["rss"]["channel"]["item"][10]["title"] %></h3>
-	<p><%== @response["rss"]["channel"]["item"][10]["description"] %></p>
 </div>
 
 

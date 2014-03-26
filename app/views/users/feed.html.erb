@@ -1,37 +1,54 @@
 <div id="feed">
-	<h1>YOUR NEWSFEED </h1>
-	<h3>Latest articles:</h3>
+	<% if @current_user.sources[0] == nil %>
+		<div id="no_feed">
+			<h1>You're not following anything, you should add some sources to your newsfeed.</h1>
+			<a href='/topics'>Add sources</a>
+		</div>
+	<%else%>
+		<h1>YOUR NEWSFEED </h1>
+		<h3>Latest articles:</h3>
 
-	<ul class="nav nav-tabs">
-	  
-	  <li class="dropdown">
-	    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-	      Sources <span class="caret"></span>
-	    </a>
-	    <ul class="dropdown-menu">
-			<% @current_user.sources.each do |s| %>
-				<p><a href='/sources/<%= s[:id]%>'><%= s.name %></a></p>
+		<ul class="nav nav-tabs">
+		  	<li class="dropdown">
+		   		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+		      		Sources <span class="caret"></span>
+		    	</a>
+		   		<ul class="dropdown-menu">
+		    		<% if @current_user %>
+						<% @current_user.sources.each do |s| %>
+							<p><a href='/sources/<%= s[:id]%>'><%= s.name %></a></p>
+						<%end%>
+					<% end %>
+		    	</ul>
+		 	</li>
+		</ul>
+
+		<div id="newsfeed_home">
+			<% @current_user.sources.each do |s|
+				sloppy_url = s.url
+				rss = Feedbag.find(sloppy_url).first
+				if rss.present?
+					feeds = Feedjira::Feed.fetch_and_parse(rss)
+					@response = HTTParty.get (rss) %>
+
+				<div id="newsfeed_home_source">
+					<h2><%= s.name %></h2>
+					<% if @response["rss"]["channel"] %>
+						<% if @response["rss"]["channel"]["item"] %>
+							<a href='/sources/<%= s[:id] %>'><h4><%== @response["rss"]["channel"]["item"][0]["title"] %></h4></a>
+						<%end%>
+					<%end%>
+				</div>
+				<% end %>
 			<%end%>
-	    </ul>
-	  </li>
-	</ul>
+			<hr>
+		</div>
+	<%end%>
 
-	<div id="newsfeed_home">
-		<% @all_sources.each do |s|
-			sloppy_url = s.url
-			rss = Feedbag.find(sloppy_url).first
-			if rss.present?
-				feeds = Feedjira::Feed.fetch_and_parse(rss)
-				@response = HTTParty.get (rss) %>
+<!--Form for search through sources -->
+	<%#= form_tag '/search', :method => "get" do %>
+        <%#= text_field_tag 'query', nil, :placeholder => 'your search term' %>
+        <%#= submit_tag 'Search' %>
+    <%# end %>
 
-			<div id="newsfeed_home_source">
-				<h2><%= s.name %></h2>
-				<% if @response["rss"]["channel"]["item"] %>
-					<a href='/sources/<%= s[:id] %>'><h4><%== @response["rss"]["channel"]["item"][0]["title"] %></h4>	</a>
-				<%end%>
-			</div>
-			<% end %>
-		<%end%>
-		<hr>
-	</div>
 </div>

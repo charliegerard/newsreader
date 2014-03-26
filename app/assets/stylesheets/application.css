@@ -222,6 +222,14 @@ nav hr{
 	margin: 0 auto;
 }
 
+#source_latest_articles a{
+	display: block;
+	padding: 5px;
+	text-decoration: none;
+	font-family: 'Lato', sans-serif;
+	color: black;
+}
+
 #source_latest_articles h3{
 	font-weight: normal;
 	padding: 10px;
@@ -250,8 +258,21 @@ nav hr{
 	margin: 0 auto;
 }
 
-#feed h1{
+#no_feed h1{
 	font-size: 40px;
+	display: block;
+	text-align: center;
+	margin: 80px;
+}
+
+#no_feed a{
+	font-size: 15px;
+	border: 1px solid black;
+	padding: 10px;
+	max-width: 120px;
+	display: block;
+	margin: -10px auto;
+	text-align: center;
 }
 
 #newsfeed_home{
@@ -295,8 +316,51 @@ nav hr{
 	font-size: 15px;
 }
 
+/*----------------------SOURCE PAGE WITH SNIPPET OF ARTICLE --------*/
 
+#single_article0{
+	display: none;
+}
 
+#single_article1{
+	display: none;
+}
+
+#single_article2{
+	display: none;
+}
+
+#single_article3{
+	display: none;
+}
+
+#single_article4{
+	display: none;
+}
+
+#single_article5{
+	display: none;
+}
+
+#single_article6{
+	display: none;
+}
+
+#single_article7{
+	display: none;
+}
+
+#single_article8{
+	display: none;
+}
+
+#single_article9{
+	display: none;
+}
+
+#single_article10{
+	display: none;
+}
 
 
 

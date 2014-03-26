@@ -17,8 +17,6 @@
 
 	<p>Didn't find what you were looking for? Add you own sources <a href="/sources/new">here</a></p>
 
-
-
 	<!--If the current user is not an admin, hide the update and delete links -->
 	<% if @current_user && @current_user.admin %>
 		<p><%= link_to("Update topic", edit_topic_path)%>

@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   end
 
   def feed
-    @all_sources = @current_user.sources
+    # @all_sources = @current_user.sources
   end
 
   private

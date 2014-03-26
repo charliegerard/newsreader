@@ -5,10 +5,12 @@
 	<%= s.label :url %>
 	<%= s.text_field :url, :required => true %>
 
-<!-- 	<% @topic.each do |t| %>
-		<p><%= t.name %>
-		<%= check_box_tag 'source[t_id]', t.id, :required => "true" %></p>
-	<%end%> -->
+	<%# @topic.each do |t| %>
+		<%#= t.name %>
+		<%#= check_box_tag 'source[t_id]', t.id %>
+	<%#end%> 
+
+	<%= collection_select(:name, :id, Topic.all, :id, :name) %>
 
 	<%= s.submit %>
 <% end %>

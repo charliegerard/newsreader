@@ -12,7 +12,7 @@
 #
 
 class User < ActiveRecord::Base
-	attr_accessible :first_name, :last_name, :email_address, :photo, :topic_ids, :password, :password_confirmation 
+	attr_accessible :first_name, :last_name, :email_address, :photo, :password, :password_confirmation 
 	has_many :topics
 	has_and_belongs_to_many :sources
 

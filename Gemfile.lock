@@ -91,6 +91,7 @@ GEM
     multi_xml (0.5.5)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
+    open_uri_redirections (0.1.4)
     pg (0.17.1)
     polyglot (0.3.4)
     protected_attributes (1.0.7)
@@ -184,6 +185,8 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   json
+  nokogiri
+  open_uri_redirections
   pg
   protected_attributes
   pry-debugger

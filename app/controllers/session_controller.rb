@@ -3,7 +3,7 @@ class SessionController < ApplicationController
 	end
 
 	def create
-		user = User.where(:first_name => params[:first_name]).first
+		user = User.where(:email_address => params[:email_address]).first
 		if user.present? && user.authenticate(params[:password]) #returns true or false if the user has logged in successfully
 			session[:user_id] = user.id
 			redirect_to root_path

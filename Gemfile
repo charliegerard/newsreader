@@ -46,6 +46,8 @@ group :development do
 	gem 'binding_of_caller'
 end
 
+gem 'nokogiri'
+gem 'open_uri_redirections'
 gem 'protected_attributes'
 gem 'httparty'
 gem 'json'

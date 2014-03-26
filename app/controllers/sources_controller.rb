@@ -5,12 +5,10 @@ class SourcesController < ApplicationController
 
   def create
     new_source = Source.create params[:source]
+    new_source.topic_id = params[:name][:id]
     new_source.save
 
     @current_user.sources << new_source
-
-    @source = Source.all
-    @source << new_source
 
     redirect_to root_path
   end
@@ -51,7 +49,7 @@ class SourcesController < ApplicationController
   def unfollow
     source = Source.find params[:id]
     @current_user.sources.delete(source)
-    redirect_to users_path
+    redirect_to root_path
   end
 
   def update
