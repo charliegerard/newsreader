@@ -49,10 +49,12 @@ class UsersController < ApplicationController
       if rss.present?
         feeds = Feedjira::Feed.fetch_and_parse(rss)
         @response = HTTParty.get (rss)
-        source =[]
-        source << s.name
-        source << @response["rss"]["channel"]["item"][0]["title"]
-        @my_sources << source          
+        if @response["rss"]
+          source =[]
+          source << s.name
+          source << @response["rss"]["channel"]["item"][0]["title"]
+          @my_sources << source   
+        end       
       end
     end
   end

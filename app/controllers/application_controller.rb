@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 
   private
   def authenticate
+  	# session[:user_id] = nil
 	if session[:user_id].present?
   		@current_user =  User.find session[:user_id]
   		session[:user_id] = nil unless @current_user

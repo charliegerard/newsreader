@@ -76,7 +76,7 @@ s40 = Source.create(:name => "B&T", :url => "http://feeds.feedburner.com/bandt")
 a1 = Article.create(:title => "The Black Keys detail new album", :copy => "The Black Keys have revealed the title and release date of their new LP: Turn Blue, their eighth studio album, will be released on May 13th. And they shared that information in an incredibly cryptic and absurd way – through a Mike Tyson tweet. Turn Blue, the boxing legend wrote on Friday, along with a link to a kooky, David Lynch-ian Youtube video of a hypnotherapist and a spinning pink record.", :image => "http://assets-s3.rollingstone.com/assets/images/story/the-black-keys-detail-new-album-turn-blue-through-mike-tyson-tweet-20140321/1000x600/20140321-blackkeys-x600-1395439282.jpg", :author => "Ryan Reed", :url => "http://www.rollingstone.com/music/news/the-black-keys-detail-new-album-turn-blue-through-mike-tyson-tweet-20140321")
 a2 = Article.create(:title => "A RENOVATED ATTIC APARTMENT IN PRAGUE", :copy => "OOOOX handled the renovation of an attic apartment located in Prague, Czech Republic that was no easy task. The old building uncovered many hidden issues as the reconstruction went on and also, it’s not always easy to get a modern look in an old, period building. The result is a clean, contemporary space named the Grey Loft.", :image => "http://3.design-milk.com/images/2014/03/Grey-Loft-OOOOX-1.jpg", :url => "http://design-milk.com/renovated-attic-apartment-prague/")
 
-u1.sources << [s1]
+u1.sources << [s3, s4, s8]
 
 t1.sources << [s1, s2, s3, s4, s5]
 t2.sources << [s6, s7, s8, s9, s10]
