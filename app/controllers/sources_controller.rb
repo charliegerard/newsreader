@@ -17,7 +17,6 @@ class SourcesController < ApplicationController
     #Add own sources to user sources if not there yet.
     # binding.pry
     if @rss && @current_user.sources.select{|source| source.url == @rss } == []
-   
       @own_source.save
       @current_user.sources << @own_source
       redirect_to root_path

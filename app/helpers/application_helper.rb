@@ -18,3 +18,4 @@ module ApplicationHelper
 		links
 	end
 end
+

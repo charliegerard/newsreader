@@ -1,4 +1,4 @@
 <h1>Index of users</h1>
-<% @user.each do |u| %>
+<% @users.each do |u| %>
 	<a href='/users/<%= u[:id]%>'><%= u.first_name %> <%= u.last_name %></a>
 <%end%>

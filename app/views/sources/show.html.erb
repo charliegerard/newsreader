@@ -1,7 +1,5 @@
 <div id="source_latest_articles">
-
 	<h1><%= @source.name %></h1>
-
 	<!-- Shows the follow/unfollow button according to the user's sources -->
 	<% if @current_user.sources.ids.include? @source.id %>  
 		<button><a href='/sources/<%= @source.id %>/unfollow'>unfollow</a></button>
@@ -12,11 +10,8 @@
 	<p><%= @response["rss"]["channel"]["description"] %></p>
 
 	<p>Latest articles:</p>
-
-	<!-- Shows the 10 latest articles -->
+	<!-- Shows the 10 latest articles in new pop up window-->
 	<% (0..9).each do |i| %>
-		<!-- <a href="#" onclick="toggle_visibility('single_article');return false"></a>  -->
-
 		<!-- Button trigger modal -->
 		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   			<%= @response["rss"]["channel"]["item"][i]["title"] %>
@@ -34,7 +29,7 @@
 			        	<p><%== @response["rss"]["channel"]["item"][i]["pubDate"] %></p>
 						<p><%== @response["rss"]["channel"]["item"][i]["description"] %></p>
 						<img src='<%== @response["rss"]["channel"]["item"][i]["thumbnail"] %>'>
-						<p>Visit website</p>
+						<p><a href='<%= @response['rss']['channel']['item'][0]['link']%>'>Visit website</a></p>
 			      	</div>
 			      	<div class="modal-footer">
 			        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -44,8 +39,3 @@
 		</div>
 	<% end %>
 </div>
-
-
-
-
-
