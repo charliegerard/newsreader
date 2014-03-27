@@ -10,7 +10,7 @@
 			<h3><%#= s[1] %></h3>
 		<%#end%> -->
    	<%end%>
-
+<% if @my_sources %>
 <h1>LATEST NEWS</h1>
  <div id="carousel-example-generic" class="carousel slide">
   <!-- Indicators -->
@@ -79,3 +79,4 @@
         <%#= submit_tag 'Search' %>
     <%# end %>
 </div>
+<%end%>
