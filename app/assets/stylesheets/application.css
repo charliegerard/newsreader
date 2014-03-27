@@ -16,6 +16,9 @@
 
  body{
  	margin: 0;
+ 	background-image: url('http://www.awmservices.it/images/gallery/3.jpg');
+ 	background-size: cover;
+ 	background-repeat: none;
  	background-color: rgb (242,242,242);
  	color: black;
  	font-family: "Lato", sans-serif;
@@ -120,14 +123,15 @@ nav hr{
 
  .carousel-inner{
  	height: 400px;
- 	background-image: url('http://www.ryanmulready.com/images/background.png');
+ 	background-color: white;
+ 	/*background-image: url('http://www.ryanmulready.com/images/background.png');*/
  	max-width: 960px;
  	margin-bottom: 40px;
  	opacity: 0.8;
  }
 
  .carousel-inner h3{
- 	color: white;
+ 	color: green;
 	font-family: "Lato", sans-serif;
 	font-weight: 300;
 	font-size: 70px;
@@ -136,7 +140,7 @@ nav hr{
  }
 
 .carousel-inner p{
- 	color: white;
+ 	color: green;
 	font-family: "Lato", sans-serif;
 	font-weight: 200;
 	font-size: 30px;
