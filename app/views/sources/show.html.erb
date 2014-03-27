@@ -15,16 +15,37 @@
 
 	<!-- Shows the 10 latest articles -->
 	<% (0..9).each do |i| %>
-		<a href="#" onclick="toggle_visibility('single_article');return false">
-  			<%= @response["rss"]["channel"]["item"][i]["title"] %>
-  		</a>   
+		<!-- <a href="#" onclick="toggle_visibility('single_article');return false"></a>  -->
 
-		<div id="single_article">
-			<p><%== @response["rss"]["channel"]["item"][i]["pubDate"] %></p>
-			<p><%== @response["rss"]["channel"]["item"][i]["description"] %></p>
-			<img src='<%== @response["rss"]["channel"]["item"][i]["thumbnail"] %>'>
+		<!-- Button trigger modal -->
+		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  			<%= @response["rss"]["channel"]["item"][i]["title"] %>
+  		</button> 
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+			     	<div class="modal-header">
+			        	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			        	<h4 class="modal-title" id="myModalLabel"><%= @response["rss"]["channel"]["item"][i]["title"] %></h4>
+			      	</div>
+			     	<div class="modal-body">
+			        	<p><%== @response["rss"]["channel"]["item"][i]["pubDate"] %></p>
+						<p><%== @response["rss"]["channel"]["item"][i]["description"] %></p>
+						<img src='<%== @response["rss"]["channel"]["item"][i]["thumbnail"] %>'>
+						<p>Visit website</p>
+			      	</div>
+			      	<div class="modal-footer">
+			        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      	</div>
+			    </div>
+			</div>
 		</div>
 	<% end %>
 </div>
+
+
+
 
 

@@ -41,7 +41,20 @@ class UsersController < ApplicationController
 
   def feed
    @topics = Topic.all
-   @source_array = []
+   @my_sources = []
+   @source_array =[]
+   @current_user.sources.last(3).each do |s|
+      sloppy_url = s.url
+      rss = Feedbag.find(sloppy_url).first
+      if rss.present?
+        feeds = Feedjira::Feed.fetch_and_parse(rss)
+        @response = HTTParty.get (rss)
+        source =[]
+        source << s.name
+        source << @response["rss"]["channel"]["item"][0]["title"]
+        @my_sources << source          
+      end
+    end
   end
 
   private

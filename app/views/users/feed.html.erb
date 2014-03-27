@@ -5,32 +5,45 @@
 			<a href='/topics'>Add sources</a>
 		</div>
 	<%else%>
-		<h1>YOUR NEWSFEED </h1>
-		<h3>Latest articles:</h3>
+		<% @my_sources.each do |s| %>
+			<h1><%= s[0] %></h1>
+			<h3><%= s[1] %></h3>
+		<%end%>
+   	<%end%>
 
-		<div id="newsfeed_home">
-			<% @current_user.sources.each do |s|
-				sloppy_url = s.url
-				rss = Feedbag.find(sloppy_url).first
-				if rss.present?
-					feeds = Feedjira::Feed.fetch_and_parse(rss)
-					@response = HTTParty.get (rss) %>
+ <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
 
-				<div id="newsfeed_home_source">
-					<h2><%= s.name %></h2>
-					<% if @response["rss"]["channel"] %>
-						<% if @response["rss"]["channel"]["item"] %>
-							<a href='/sources/<%= s[:id] %>'><h4><%== @response["rss"]["channel"]["item"][0]["title"] %></h4></a>
-						<%end%>
-					<%end%>
-				</div>
-				<% end %>
-			<%end%>
-		</div>
-	<%end%>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="..." alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    ...
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
+
+
 
 	<!-- Display the recommendations from other users if the user is already following sources -->
-	<% if @current_user.sources[0] != nil %>
+<% if @current_user.sources[0] != nil %>
 	<h4>Recommended for you</h4>
 	<!-- For each topic including the current user id, go through each user and their sources to display other sources from the same topic -->
 	<% @topics.each do |t| %>

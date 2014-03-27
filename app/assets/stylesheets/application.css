@@ -102,6 +102,22 @@ nav hr{
  	text-align: center;
  }
 
+ .carousel-inner{
+ 	height: 400px;
+ 	background-image: url('http://www.ryanmulready.com/images/background.png');
+ }
+
+ .carousel-inner h1{
+ 	color: white;
+ 	position: absolute;
+ }
+
+ .carousel-example-generic{
+ 	display: none;
+ }
+
+
+
  /*------------------------TOPICS PAGE-------------------------*/
 
  #topics{
@@ -224,6 +240,13 @@ nav hr{
 	margin: 0 auto;
 }
 
+#source_latest_articles button{
+	display: block;
+	clear: both;
+}
+
+
+
 #source_latest_articles a{
 	display: block;
 	padding: 5px;
@@ -322,9 +345,22 @@ nav hr{
 
 /*----------------------SOURCE PAGE WITH SNIPPET OF ARTICLE --------*/
 
-#single_article{
-	display: none;
+
+.btn-primary{
+	background-color: #bbb;
+	border-color: #bbb;
+	margin-bottom: 20px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
 }
+
+.btn-primary:hover{
+	background-color: grey;
+	border-color: grey;
+	margin-bottom: 20px;
+}
+
+
 
 
 
