@@ -5,13 +5,14 @@
 			<a href='/topics'>Add sources</a>
 		</div>
 	<%else%>
-		<% @my_sources.each do |s| %>
-			<h1><%= s[0] %></h1>
-			<h3><%= s[1] %></h3>
-		<%end%>
+<!-- 		<%# @my_sources.each do |s| %>
+			<h1><%#= s[0] %></h1>
+			<h3><%#= s[1] %></h3>
+		<%#end%> -->
    	<%end%>
 
- <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<h1>LATEST NEWS</h1>
+ <div id="carousel-example-generic" class="carousel slide">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -22,24 +23,33 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img src="..." alt="...">
+      	<h3><%= @my_sources[0][0]%></h3>
+        <p><%= @my_sources[0][1]%></p>
       <div class="carousel-caption">
-        ...
       </div>
     </div>
-    ...
+<div class="item">
+      <h3><%= @my_sources[1][0]%></h3>
+      <p><%= @my_sources[1][1]%></p>
+      <div class="carousel-caption">
+      </div>
+    </div>
+<div class="item">
+       <h3><%= @my_sources[2][0]%></h3>
+       <p><%= @my_sources[2][1]%></p>
+      <div class="carousel-caption">
+      </div>
+    </div>
   </div>
 
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="icon-prev"></span>
   </a>
   <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="icon-next"></span>
   </a>
 </div>
-
-
 
 
 	<!-- Display the recommendations from other users if the user is already following sources -->

@@ -13,4 +13,6 @@ class Source < ActiveRecord::Base
 	has_many :articles
 	belongs_to :topics
 	has_and_belongs_to_many :users
+
+	validates :url, uniqueness: true
 end

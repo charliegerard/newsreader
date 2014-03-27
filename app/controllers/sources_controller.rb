@@ -5,9 +5,9 @@ class SourcesController < ApplicationController
 
   def create
     @source = Source.all
-    @source.each do |s|
-      @url = s.url
-    end
+    # @source.each do |s|
+    #   @url = s.url
+    # end
 
     @own_source = Source.create params[:source]
     @own_source.topic_id = params[:name][:id]
@@ -15,7 +15,9 @@ class SourcesController < ApplicationController
     input_url = @own_source.url
     @rss = Feedbag.find(input_url).first
     #Add own sources to user sources if not there yet.
-    if (@rss && @rss != Feedbag.find(@url).first)
+    # binding.pry
+    if @rss && @current_user.sources.select{|source| source.url == @rss } == []
+   
       @own_source.save
       @current_user.sources << @own_source
       redirect_to root_path
