@@ -244,8 +244,13 @@ i{
 	padding: 20px;
  }
 
- #login h1, #login h2{
+ #login h1{
  	color: rgb(32,40,32);
+ 	font-weight: 200;
+ }
+
+ #login h2{
+ 	color: white;
  	font-weight: 200;
  }
 
@@ -541,7 +546,7 @@ i{
 	font-size: 40px;
 	display: block;
 	text-align: center;
-	color: white;
+	color: black;
 	text-shadow: 1px 1px 1px rgb(33,58,62);
 	margin: 80px;
 }
@@ -554,7 +559,7 @@ i{
 	display: block;
 	margin: -10px auto;
 	text-align: center;
-	background-color: white;
+
 	opacity: 0.8;
 	color: rgb(33,58,62);
 }

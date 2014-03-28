@@ -10,18 +10,26 @@
     <div id="carousel-example-generic" class="carousel slide">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="/sources/<%= @current_user.sources[0].id%>" data-slide-to="0" class="active"></li>
-        <li data-target="/sources/<%= @current_user.sources[1].id%>" data-slide-to="1"></li>
-        <li data-target="/sources/<%= @current_user.sources[2].id%>" data-slide-to="2"></li>
+        <% if @my_sources[0] %>
+          <li data-target="/sources/<%= @current_user.sources[0].id%>" data-slide-to="0" class="active"></li>
+        <%end%>
+        <% if @my_sources[1] %>
+          <li data-target="/sources/<%= @current_user.sources[1].id%>" data-slide-to="1"></li>
+        <%end%>
+        <% if @my_sources[2] %>
+          <li data-target="/sources/<%= @current_user.sources[2].id%>" data-slide-to="2"></li>
+        <%end%>
       </ol>
 
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
+          <% if @my_sources[0] %>
           <h3><a href="/sources/<%= @current_user.sources[0].id%>"><%= @my_sources[0][0]%></a></h3>
           <p><%= @my_sources[0][1]%></p>
           <div class="carousel-caption">
           </div>
+          <%end%>
         </div>
         <div class="item">
           <% if @my_sources[1] %>
