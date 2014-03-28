@@ -29,4 +29,4 @@
 
 ###SPECIAL THANKS
 
-Special thanks to Mathilda Thompson without who this project wouldn't have seen the day.
+Special thanks to Mathilda Thompson & Joel Turnbull without who this project wouldn't have seen the day.
