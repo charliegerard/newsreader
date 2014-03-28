@@ -16,6 +16,7 @@ class SourcesController < ApplicationController
       @current_user.sources << @own_source
       redirect_to root_path
     else
+      flash[:notice] = "Oops this url cannot be added, please try with another one"
       redirect_to new_source_path
     end
   end
