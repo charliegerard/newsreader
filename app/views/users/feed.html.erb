@@ -6,72 +6,71 @@
 		</div>
 	<%else%>
    
-    <% if @my_sources %>
-      <!-- <h1>LATEST NEWS</h1> -->
-      <div id="carousel-example-generic" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="/sources/<%= @current_user.sources[0].id%>" data-slide-to="0" class="active"></li>
-          <li data-target="/sources/<%= @current_user.sources[1].id%>" data-slide-to="1"></li>
-          <li data-target="/sources/<%= @current_user.sources[2].id%>" data-slide-to="2"></li>
-        </ol>
+  <% if @my_sources %>
+    <div id="carousel-example-generic" class="carousel slide">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="/sources/<%= @current_user.sources[0].id%>" data-slide-to="0" class="active"></li>
+        <li data-target="/sources/<%= @current_user.sources[1].id%>" data-slide-to="1"></li>
+        <li data-target="/sources/<%= @current_user.sources[2].id%>" data-slide-to="2"></li>
+      </ol>
 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-          <div class="item active">
-            <h3><a href="/sources/<%= @current_user.sources[0].id%>"><%= @my_sources[0][0]%></a></h3>
-            <p><%= @my_sources[0][1]%></p>
-            <div class="carousel-caption">
-            </div>
-          </div>
-          <div class="item">
-            <% if @my_sources[1] %>
-              <h3><a href="/sources/<%= @current_user.sources[1].id%>"><%= @my_sources[1][0]%></a></h3>
-              <p><%= @my_sources[1][1]%></p>
-              <div class="carousel-caption">
-              </div>
-            <%end%>
-          </div>
-          <div class="item">
-            <% if @my_sources[2] %>
-              <h3><a href="/sources/<%= @current_user.sources[2].id%>"><%= @my_sources[2][0]%></a></h3>
-              <p><%= @my_sources[2][1]%></p>
-              <div class="carousel-caption">
-              </div>
-            <%end%>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <h3><a href="/sources/<%= @current_user.sources[0].id%>"><%= @my_sources[0][0]%></a></h3>
+          <p><%= @my_sources[0][1]%></p>
+          <div class="carousel-caption">
           </div>
         </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-          <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-          <span class="icon-next"></span>
-        </a>
+        <div class="item">
+          <% if @my_sources[1] %>
+            <h3><a href="/sources/<%= @current_user.sources[1].id%>"><%= @my_sources[1][0]%></a></h3>
+            <p><%= @my_sources[1][1]%></p>
+            <div class="carousel-caption">
+            </div>
+          <%end%>
+        </div>
+        <div class="item">
+          <% if @my_sources[2] %>
+            <h3><a href="/sources/<%= @current_user.sources[2].id%>"><%= @my_sources[2][0]%></a></h3>
+            <p><%= @my_sources[2][1]%></p>
+            <div class="carousel-caption">
+            </div>
+          <%end%>
+        </div>
       </div>
 
-	   <!-- Display the recommendations from other users if the user is already following sources -->
-      <% if @current_user.sources[0] != nil %>
-         <hr>
-	       <h4>Recommended for you</h4>
-	       <!-- For each topic including the current user id, go through each user and their sources to display other sources from the same topic -->
-	       <% @topics.each do |t| %>
-		        <% if t.user_ids.include? @current_user.id %>
-			         <% t.users.each do |u| %>
-				          <% u.sources.each do |s|%>
-					           <% if !(@current_user.sources.include? s) %>
-						            <% @source_array << s %>
-					           <%end%>
-			            <%end%>
-			         <%end%>
-		        <%end%>
-	       <%end%>
-      <%end%>
-      <!-- Avoid duplicates between users sources. Did not work properly inside the loop. -->
-      <% @source_array.uniq.each do |s| %>
-	       <p><a href='/sources/<%= s.id%>'><%= s.name %></a></p>
-      <%end%>
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="icon-prev"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="icon-next"></span>
+      </a>
+    </div>
+
+    <!-- Display the recommendations from other users if the user is already following sources -->
+    <% if @current_user.sources[0] != nil %>
+      <hr>
+      <h4>Recommended for you</h4>
+      <!-- For each topic including the current user id, go through each user and their sources to display other sources from the same topic -->
+      <% @topics.each do |t| %>
+		    <% if t.user_ids.include? @current_user.id %>
+          <% t.users.each do |u| %>
+				    <% u.sources.each do |s|%>
+					    <% if !(@current_user.sources.include? s) %>
+						    <% @source_array << s %>
+					    <%end%>
+			      <%end%>
+			    <%end%>
+		    <%end%>
+	    <%end%>
+    <%end%>
+    <!-- Avoid duplicates between users sources. Did not work properly inside the loop. -->
+    <% @source_array.uniq.each do |s| %>
+      <p><a href='/sources/<%= s.id%>'><%= s.name %></a></p>
     <%end%>
   <%end%>
+<%end%>
 </div>

@@ -1,9 +1,7 @@
 <body id="login">
 	<h1>Sign in</h1>
   	<% if flash[:notice].present? %>
-   		<h2>
-    		<%= flash[:notice] %>
-    	</h2>
+   		<h2><%= flash[:notice] %></h2>
     <% end %>
 
 	<div id="login-form">
@@ -13,18 +11,16 @@
 		   		<div class="form-control"> 
 		   			<%= text_field_tag 'email_address', nil, :autofocus => true, 	:placeholder => 'example@example.com' %>
 		  		</div>
-		</div>
-		<div class="form-group">
-			<label>password</label>
-			<div class="form-control">
-		    	<%= password_field_tag 'password' %>
-		 	</div>
-		</div>
-		<div class="btn btn-default">
-		    <%= submit_tag 'login' %>
-		</div>
-		<% end %>
+
+				<label>password</label>
+				<div class="form-control">
+		    		<%= password_field_tag 'password' %>
+		 		</div>
+				</div>
+				<div class="btn btn-default">
+		    		<%= submit_tag 'login' %>
+				</div>
+			<% end %>
 	</div>
-	
 </body>
 

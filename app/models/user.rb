@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
 	has_and_belongs_to_many :sources
 
 	has_secure_password
-	validates :photo, :presence => true #the user must have an image, the account will not be created without
+	validates :photo, :presence => true
 	validates :first_name, :presence => true, :uniqueness => true, :length => { :minimum => 2 }
 	validates :last_name, :presence => true, :uniqueness => true, :length => { :minimum => 2 }
 end

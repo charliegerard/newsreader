@@ -7,50 +7,37 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
-  <!-- Bits of Javascript for the expand effect on posts -->
-      <script type="text/javascript">
-        function toggle_visibility(id) {
-           var e = document.getElementById(id);
-           if(e.style.display == 'block')
-              e.style.display = 'none';
-           else
-              e.style.display = 'block';
-        }
-      </script>
-      <script>
-        $(document).ready(function(){
-          $('.carousel').carousel();
-        });
-      </script>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <!--Bits of Javascript for the carousel on newsfeed -->
+  <script>
+    $(document).ready(function(){
+      $('.carousel').carousel();
+    });
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 </head>
 <body>
-
-		<nav>
-			<ul>
-				<%== intellinav %>
-        <!-- Dropdown in nav bar -->
-        <% if @current_user %>
+	<nav>
+		<ul>
+			<%== intellinav %>
+      <!-- Dropdown in nav bar -->
+      <% if @current_user %>
         <ul class="nav nav-tabs">
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
               Sources <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-                <% @current_user.sources.each do |s| %>
-                  <p><a href='/sources/<%= s[:id]%>'><%= s.name %></a></p>
-                <%end%>
-              <% end %>
+              <% @current_user.sources.each do |s| %>
+                <p><a href='/sources/<%= s[:id]%>'><%= s.name %></a></p>
+              <%end%>
             </ul>
           </li>
         </ul>  
-			</ul>
-		</nav>
+      <% end %>
+		</ul>
+	</nav>
   <%= yield %>
-  <<!-- div id="footer">
-    <a href='http://www.twitter.com/charlie__gerard'><img src="http://www.thefemalenetwork.com/pro_tfn/uploads/file/twitter-circle-logo.png"></a>
-  </div> -->
 </body>
 </html>

@@ -5,17 +5,12 @@ class SourcesController < ApplicationController
 
   def create
     @source = Source.all
-    # @source.each do |s|
-    #   @url = s.url
-    # end
-
     @own_source = Source.create params[:source]
     @own_source.topic_id = params[:name][:id]
     #adds the source to the user's sources if an rss feed can be found
     input_url = @own_source.url
     @rss = Feedbag.find(input_url).first
-    #Add own sources to user sources if not there yet.
-    # binding.pry
+    #Add own sources to user sources if it already doesn't have it.
     if @rss && @current_user.sources.select{|source| source.url == @rss } == []
       @own_source.save
       @current_user.sources << @own_source
@@ -44,7 +39,7 @@ class SourcesController < ApplicationController
   def follow
     source = Source.find params[:id]
     sloppy_url = source.url
-    #Look for rss feed from the url and if found, parse the content
+    #Look for rss feed from the url and if found, parse the content.
     rss = Feedbag.find(sloppy_url).first
     if rss.present?
       feeds = Feedjira::Feed.fetch_and_parse(rss)

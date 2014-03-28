@@ -1,6 +1,6 @@
 <div id="source_latest_articles">
 	<h1><%= @source.name %></h1>
-	<!-- Shows the follow/unfollow button according to the user's sources -->
+	<!-- Shows the follow/unfollow button depending on which sources the user already follows -->
 	<% if @current_user.sources.ids.include? @source.id %>  
 		<button><a href='/sources/<%= @source.id %>/unfollow'>unfollow</a></button>
 	<%else%>
@@ -23,8 +23,8 @@
 				<div class="modal-content">
 			     	<div class="modal-header">
 			        	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			        	
-			        	<h4 class="modal-title" id="myModalLabel"><%= @response["rss"]["channel"]["item"][i]["title"] %></h4>
+			        	<h4 class="modal-title" id="myModalLabel"><%= @response["rss"]["channel"]["item"][i]["title"] %>
+			        	</h4>
 			      	</div>
 			     	<div class="modal-body">
 			        	<p><%== @response["rss"]["channel"]["item"][i]["pubDate"] %></p>
