@@ -15,4 +15,12 @@ class Source < ActiveRecord::Base
 	has_and_belongs_to_many :users
 
 	validates :url, uniqueness: true
+
+    def get_rss
+        #self refers to the instance of the source class that you are calling the get_rss method on;
+        sloppy_url = self.url
+        rss = Feedbag.find(sloppy_url).first
+        feeds = Feedjira::Feed.fetch_and_parse(rss)
+        @response = HTTParty.get (rss)
+    end
 end
