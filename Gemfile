@@ -37,6 +37,7 @@ gem 'sextant'
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
 gem 'rails_12factor'
+gem 'newrelic_rpm'
 
 group :development do
 	gem 'pry-rails'
