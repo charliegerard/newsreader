@@ -16,23 +16,27 @@
 
  body{
  	margin: 0;
- 	background-image: url('http://d2eeah5ynu0ra7.cloudfront.net/wp-content/uploads/insta-home_test.jpg');
+ 	/*background-image: url('http://d2eeah5ynu0ra7.cloudfront.net/wp-content/uploads/insta-home_test.jpg');*/
+ 	background-image: url('city-background.jpg');
+ 	/* Link to image above is: http://www.awakenations.org/wp-content/uploads/2013/08/city-background-images.jpg; */
  	font-family: "Lato", sans-serif;
  	height: 100%;
  	background-size: cover;
  	position: relative;
  }
 
-body :before{
+/*body::before {
 	content: "";
 	position: relative;
+	background-image: url('city-background.jpg');
 	background-repeat: no-repeat;
+	opacity: 0.5;
 	height: 25%; width: 25%;
 	z-index: -1;
     -webkit-transform: scale(6);
     -webkit-transform-origin: top left;
     -webkit-filter: blur(0.2px);
-}
+}*/
 
  nav{
  	display: block;
