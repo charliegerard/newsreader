@@ -8,11 +8,13 @@
 
 	body{
 	 	margin: 0;
+	 	width: 100%;
+	 	height: 100%;
 	 	background-image: url('city-background.jpg');
 	 	font-family: "Lato", sans-serif;
 	 	background-repeat: no-repeat;
 	 	background-position: relative;
-	 	background-size: 100%;
+	 	background-size: 150%;
  	}
 
 }
