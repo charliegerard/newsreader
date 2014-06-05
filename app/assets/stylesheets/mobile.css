@@ -6,4 +6,14 @@
 		vertical-align: top;
 	}
 
+	body{
+	 	margin: 0;
+	 	background-image: url('city-background.jpg');
+	 	font-family: "Lato", sans-serif;
+	 	height: 100%;
+	 	background-size: cover;
+	 	background-repeat: none;
+	 	position: absolute;
+ 	}
+
 }
