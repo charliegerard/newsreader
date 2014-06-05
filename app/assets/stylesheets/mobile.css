@@ -1,0 +1,9 @@
+@media(max-width: 650px){
+	#box p.icon{
+		display: inline-block;
+		max-width: 30%;
+		margin: 0 1%;
+		vertical-align: top;
+	}
+
+}
