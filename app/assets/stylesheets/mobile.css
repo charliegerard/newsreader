@@ -10,9 +10,9 @@
 	 	margin: 0;
 	 	background-image: url('city-background.jpg');
 	 	font-family: "Lato", sans-serif;
-	 	height: auto;
+	 	height: 100%;
 	 	background-repeat: no-repeat;
-	 	background-position: absolute;
+	 	background-position: relative;
  	}
 
 }
