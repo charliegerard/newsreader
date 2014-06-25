@@ -33,8 +33,15 @@ class SourcesController < ApplicationController
     @source = Source.find params[:id]
     sloppy_url = @source.url
     rss = Feedbag.find(sloppy_url).first
-    feeds = Feedjira::Feed.fetch_and_parse(rss)
-    @response = HTTParty.get (rss)
+
+    #If the source doesn't have an rss feed, return to home
+    if rss.present?
+      feeds = Feedjira::Feed.fetch_and_parse(rss)
+      @response = HTTParty.get (rss)
+    else
+      redirect_to root_path
+    end
+
   end
 
   def follow

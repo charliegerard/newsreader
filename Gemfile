@@ -54,6 +54,7 @@ gem 'httparty'
 gem 'json'
 gem 'feedjira'
 gem 'feedbag'
+gem "ruby-readability"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
